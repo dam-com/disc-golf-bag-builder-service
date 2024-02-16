@@ -10,6 +10,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: disc-golf-bag-builder-service
     steps:
       # Check-out your repository.
       - name: Checkout

@@ -28,9 +28,8 @@ jobs:
       - name: Build with Gradle
         run: |
           chmod +x gradlew
-          ./gradlew build -Dquarkus.container-image.build=true
-          sleep 5s
-          docker ps
+          ./gradlew build
+          docker image ls
 
 #      -
 #        name: Login to Docker Hub

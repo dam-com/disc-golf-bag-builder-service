@@ -26,7 +26,7 @@ jobs:
         uses: gradle/gradle-build-action@v3
       - name: Set Image Tag env var
         run: |
-          echo "IMAGE_TAG=${$REGISTRY}/${{ secrets.HEROKU_APP_NAME }}/web" >> $GITHUB_ENV
+          echo "IMAGE_TAG=${REGISTRY}/${{ secrets.HEROKU_APP_NAME }}/web" >> $GITHUB_ENV
       - name: Build with Gradle
         run: |
           chmod +x gradlew

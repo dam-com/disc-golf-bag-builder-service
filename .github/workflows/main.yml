@@ -39,3 +39,6 @@ jobs:
       - name: Push Docker image
         run: |
           docker push $REGISTRY/$IMAGE_NAME
+      - name: Deploy Image to Heroku
+        run: |
+          heroku container:release web -a disc-golf-bag-builder-service

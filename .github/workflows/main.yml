@@ -10,6 +10,7 @@ jobs:
     environment: disc-golf-bag-builder-service
     env:
       REGISTRY: registry.heroku.com
+      APP_NAME: disc-golf-bag-builder-service
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,9 +25,10 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v3
+        # Cannot create an ENV variable using another ENV variable, this is the workaround
       - name: Set Image Tag env var
         run: |
-          echo "IMAGE_TAG=${REGISTRY}/${{ secrets.HEROKU_APP_NAME }}/web" >> $GITHUB_ENV
+          echo "IMAGE_TAG=$REGISTRY/$APP_NAME/web" >> $GITHUB_ENV
       - name: Build with Gradle
         run: |
           chmod +x gradlew

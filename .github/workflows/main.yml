@@ -28,12 +28,12 @@ jobs:
       - name: Build with Gradle
         run: |
           chmod +x gradlew
-          ./gradlew build -Dquarkus.container-image.group=$REGISTRY -Dquarkus.container-image.name=$IMAGE_NAME
+          ./gradlew build -Dquarkus.container-image.group=$REGISTRY -Dquarkus.container-image.name=$IMAGE_NAME -Dquarkus.container-image.tag=latest
           docker image ls
       - name: Login to Heroku Registry
         uses: docker/login-action@v3
         with:
-          registry: registry.heroku.com
+          registry: ${{ env.REGISTRY }}
           username: ${{ secrets.HEROKU_EMAIL }}
           password: ${{ secrets.HEROKU_API_KEY }}
       - name: Push Docker image

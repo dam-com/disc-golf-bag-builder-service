@@ -88,7 +88,7 @@ COPY --chown=185 build/quarkus-app/*.jar /deployments/
 COPY --chown=185 build/quarkus-app/app/ /deployments/app/
 COPY --chown=185 build/quarkus-app/quarkus/ /deployments/quarkus/
 
-ENV PORT=${PORT:-8080}
+ENV PORT=${PORT:8080}
 
 EXPOSE $PORT
 

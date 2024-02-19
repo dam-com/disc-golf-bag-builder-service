@@ -41,5 +41,5 @@ jobs:
           docker push $REGISTRY/$IMAGE_NAME
       - name: Deploy Image to Heroku
         run: |
-          heroku container:login --password-stdin=${{ secrets.HEROKU_API_KEY }}
-          heroku container:release web -a disc-golf-bag-builder-service
+          export HEROKU_API_KEY=${{ secrets.HEROKU_API_KEY }}
+          heroku container:release web --app disc-golf-bag-builder-service

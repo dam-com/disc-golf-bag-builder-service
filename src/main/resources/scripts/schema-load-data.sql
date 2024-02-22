@@ -108,12 +108,15 @@ CREATE TABLE disc
 ALTER TABLE disc ADD PRIMARY KEY (id);
 
 
-ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
-ALTER TABLE plastic ADD CONSTRAINT plastic_manufacturer_id_foreign FOREIGN KEY(manufacturer_id) REFERENCES manufacturer(id);
---ALTER TABLE main_disc ADD CONSTRAINT main_disc_manufacturer_foreign FOREIGN KEY(manufacturer) REFERENCES manufacturer(id);
-ALTER TABLE disc ADD CONSTRAINT disc_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
-ALTER TABLE shelf ADD CONSTRAINT shelf_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
-ALTER TABLE bag ADD CONSTRAINT bag_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
-ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_disc_id_foreign FOREIGN KEY(disc_id) REFERENCES disc(id);
-ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_bag_id_foreign FOREIGN KEY(bag_id) REFERENCES bag(id);
-ALTER TABLE shelf ADD CONSTRAINT shelf_disc_id_foreign FOREIGN KEY(disc_id) REFERENCES disc(id);
+--ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
+--ALTER TABLE plastic ADD CONSTRAINT plastic_manufacturer_id_foreign FOREIGN KEY(manufacturer_id) REFERENCES manufacturer(id);
+----ALTER TABLE main_disc ADD CONSTRAINT main_disc_manufacturer_foreign FOREIGN KEY(manufacturer) REFERENCES manufacturer(id);
+--ALTER TABLE disc ADD CONSTRAINT disc_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
+--ALTER TABLE shelf ADD CONSTRAINT shelf_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
+--ALTER TABLE bag ADD CONSTRAINT bag_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
+--ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_disc_id_foreign FOREIGN KEY(disc_id) REFERENCES disc(id);
+--ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_bag_id_foreign FOREIGN KEY(bag_id) REFERENCES bag(id);
+--ALTER TABLE shelf ADD CONSTRAINT shelf_disc_id_foreign FOREIGN KEY(disc_id) REFERENCES disc(id);
+
+
+INSERT INTO bag VALUES (1,1,'testbag','grip');

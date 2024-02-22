@@ -1,0 +1,38 @@
+name: Validate Project
+
+on: pull_request
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v3
+      - name: Build with Gradle
+        run: |
+          chmod +x gradlew
+          ./gradlew compileKotlin
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v3
+      - name: Build with Gradle
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v3
+      - name: Build with Gradle
+        run: |
+          chmod +x gradlew
+          ./gradlew assemble

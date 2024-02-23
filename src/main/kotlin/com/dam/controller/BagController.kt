@@ -1,4 +1,4 @@
-package com.dam.resource
+package com.dam.controller
 
 import com.dam.model.Bag
 import com.dam.service.BagService
@@ -9,7 +9,7 @@ import jakarta.ws.rs.Path
 
 @Path("/bag")
 @ApplicationScoped
-class BagResource {
+class BagController {
     @Inject
     lateinit var bagService: BagService
 

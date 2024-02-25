@@ -6,8 +6,8 @@ import jakarta.persistence.*
 @Table(name = "plastic")
 class Plastic {
     @Id
-    var id: Long? = null
     @GeneratedValue(generator = "plastic_id_seq", strategy = GenerationType.SEQUENCE)
+    var id: Long? = null
     @Column(name = "maunfacturer_id")
     var maunfacturerId: Long? = null
     lateinit var name: String

@@ -1,15 +1,13 @@
 package com.dam.model
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table(name = "plastic")
 class Plastic {
     @Id
     var id: Long? = null
+    @GeneratedValue(generator = "plastic_id_seq", strategy = GenerationType.SEQUENCE)
 //    maybe needs this idk
 //    @Column(name = "maunfacturer_id")
     var maunfacturer_id: Long? = null

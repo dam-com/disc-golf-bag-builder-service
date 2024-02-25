@@ -1,13 +1,12 @@
 package com.dam.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 
 @Entity
 @Table (name = "main_disc")
 class MainDisc {
     @Id
+    @GeneratedValue(generator = "main_disc_id_seq", strategy = GenerationType.SEQUENCE)
     var id: Long? = null
     lateinit var name: String
     lateinit var manufacturer: String

@@ -15,15 +15,22 @@ class MainDisc {
     var turn: Double? = null
     var fade: Double? = null
     lateinit var description: String
-    var max_weight: Double? = null
+    @Column(name = "max_weight")
+    var maxWeight: Double? = null
     lateinit var diameter: String
     lateinit var height: String
-    lateinit var rim_depth: String
-    lateinit var inside_rim_diameter: String
-    lateinit var rim_thickness: String
-    lateinit var rim_depth_diameter_ratio: String
-    lateinit var rim_configuration: String
+    @Column(name = "rim_depth")
+    lateinit var rimDepth: String
+    @Column(name = "inside_rim_diameter")
+    lateinit var insideRimDiameter: String
+    @Column(name = "rim_thickness")
+    lateinit var rimThickness: String
+    @Column(name = "rim_depth_diameter_ratio")
+    lateinit var rimDepthDiameterRatio: String
+    @Column(name = "rim_configuration")
+    lateinit var rimConfiguration: String
     lateinit var flexibility: String
-    lateinit var approved_date: String
+    @Column(name = "approved_date")
+    lateinit var approvedDate: String
 
 }

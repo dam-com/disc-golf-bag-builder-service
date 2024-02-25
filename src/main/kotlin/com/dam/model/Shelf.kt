@@ -10,5 +10,6 @@ class Shelf {
     var id: Long? = null
     @Column(name = "user_id")
     val userId: Long? = null
-    var disc_id: Long? = null
+    @Column(name = "disc_id")
+    var discId: Long? = null
 }

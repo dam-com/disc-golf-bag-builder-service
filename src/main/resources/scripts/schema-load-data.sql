@@ -26,7 +26,7 @@ CREATE TABLE main_disc
     turn DECIMAL(8, 2) NULL,
     fade DECIMAL(8, 2) NULL,
     description CHARACTER VARYING(255) NULL,
-    max_weight CHARACTER VARYING(255) NULL,
+    max_weight DECIMAL(8, 2) NULL,
     diameter CHARACTER VARYING(255) NULL,
     height CHARACTER VARYING(255) NULL,
     rim_depth CHARACTER VARYING(255) NULL,
@@ -34,7 +34,8 @@ CREATE TABLE main_disc
     rim_thickness CHARACTER VARYING(255) NULL,
     rim_depth_diameter_ratio CHARACTER VARYING(255) NULL,
     rim_configuration CHARACTER VARYING(255) NULL,
-    flexibility CHARACTER VARYING(255) NULL
+    flexibility CHARACTER VARYING(255) NULL,
+    approved_date CHARACTER VARYING(255) NULL
 );
 ALTER TABLE main_disc ADD PRIMARY KEY (id);
 
@@ -120,7 +121,7 @@ ALTER TABLE shelf ADD CONSTRAINT shelf_disc_id_foreign FOREIGN KEY(disc_id) REFE
 
 INSERT INTO "user" VALUES (1,'bob');
 INSERT INTO manufacturer VALUES (1,1);
-INSERT INTO main_disc VALUES (1,'disc1','discmaker',1.0,1.0,1.0,1.0,'putteridk','175grams','22cm','1cm','1cm','.5cm','1cm','1:1','rimconfiguration','very');
+INSERT INTO main_disc VALUES (1,'disc1','discmaker',1.0,1.0,1.0,1.0,'putteridk',1.6,'22cm','1cm','1cm','.5cm','1cm','1:1','rimconfiguration','very','12/6/97');
 INSERT INTO disc VALUES (1,1,'disc name','discmaker','plastic plasticy',1.005,1.0,1.0,1.0,1.0,'good disc','fair','blue',false);
 INSERT INTO bag VALUES (1,1,'testbag','grip');
 INSERT INTO disc_bag VALUES (1,1,1,1,true);

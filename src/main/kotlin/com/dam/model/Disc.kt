@@ -15,11 +15,11 @@ class Disc {
     lateinit var name: String
     lateinit var manufacturer: String
     lateinit var plastic: String
-    var weight: Long? = null
-    var speed: Long? = null
-    var glide: Long? = null
-    var turn: Long? = null
-    var fade: Long? = null
+    var weight: Double? = null
+    var speed: Double? = null
+    var glide: Double? = null
+    var turn: Double? = null
+    var fade: Double? = null
     lateinit var description: String
     lateinit var condition: String
     lateinit var color: String

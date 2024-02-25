@@ -14,6 +14,7 @@ CREATE TABLE "user"
     name CHARACTER VARYING(255) NOT NULL
 );
 ALTER TABLE "user" ADD PRIMARY KEY (id);
+CREATE SEQUENCE user_id_seq START 1 INCREMENT 1 OWNED BY user.id;
 
 
 CREATE TABLE main_disc
@@ -38,6 +39,7 @@ CREATE TABLE main_disc
     approved_date CHARACTER VARYING(255) NULL
 );
 ALTER TABLE main_disc ADD PRIMARY KEY (id);
+CREATE SEQUENCE main_disc_id_seq START 1 INCREMENT 1 OWNED BY main_disc.id;
 
 
 CREATE TABLE manufacturer
@@ -46,6 +48,7 @@ CREATE TABLE manufacturer
     name BIGINT NULL
 );
 ALTER TABLE manufacturer ADD PRIMARY KEY (id);
+CREATE SEQUENCE manufacturer_id_seq START 1 INCREMENT 1 OWNED BY manufacturer.id;
 
 
 CREATE TABLE bag
@@ -67,6 +70,7 @@ CREATE TABLE disc_bag
     favorite BOOLEAN NULL
 );
 ALTER TABLE disc_bag ADD PRIMARY KEY (id);
+CREATE SEQUENCE disc_bag_id_seq START 1 INCREMENT 1 OWNED BY disc_bag.id;
 
 
 CREATE TABLE plastic
@@ -78,6 +82,7 @@ CREATE TABLE plastic
     classification CHARACTER VARYING(255) NULL
 );
 ALTER TABLE plastic ADD PRIMARY KEY (id);
+CREATE SEQUENCE plastic_id_seq START 1 INCREMENT 1 OWNED BY plastic.id;
 
 
 CREATE TABLE shelf
@@ -87,7 +92,7 @@ CREATE TABLE shelf
     disc_id BIGINT NOT NULL
 );
 ALTER TABLE shelf ADD PRIMARY KEY (id);
-
+CREATE SEQUENCE shelf_id_seq START 1 INCREMENT 1 OWNED BY shelf.id;
 
 CREATE TABLE disc
 (
@@ -107,6 +112,7 @@ CREATE TABLE disc
     favorite BOOLEAN NULL
 );
 ALTER TABLE disc ADD PRIMARY KEY (id);
+CREATE SEQUENCE disc_id_seq START 1 INCREMENT 1 OWNED BY disc.id;
 
 
 ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);

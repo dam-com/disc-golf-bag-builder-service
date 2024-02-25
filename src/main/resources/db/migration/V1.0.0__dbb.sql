@@ -1,14 +1,3 @@
-create schema if not exists dbb;
-set schema 'dbb';
-
-DO $$ DECLARE
-    r RECORD;
-BEGIN
-    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
-        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
-    END LOOP;
-END $$;
-
 CREATE TABLE "user"
 (
     id BIGINT NOT NULL,
@@ -128,4 +117,3 @@ INSERT INTO bag VALUES (nextval('bag_id_seq'),1,'testbag2','pund');
 INSERT INTO disc_bag VALUES (1,1,1,1,true);
 INSERT INTO plastic VALUES (1,1,'plasticname','very plastic very nice','plastic classification');
 INSERT INTO shelf VALUES (1,1,1);
-

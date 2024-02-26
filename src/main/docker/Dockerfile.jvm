@@ -81,6 +81,8 @@ FROM registry.access.redhat.com/ubi8/openjdk-21:1.18
 
 ENV LANGUAGE='en_US:en'
 
+COPY --chown=185 src/main/docker/files/heroku.sh /deployments/heroku.sh
+RUN chmod 540 /deployments/heroku.sh
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
 COPY --chown=185 build/quarkus-app/lib/ /deployments/lib/
@@ -94,5 +96,4 @@ USER 185
 ENV JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
 ENV JAVA_APP_JAR="/deployments/quarkus-run.jar"
 
-ENTRYPOINT [ "/opt/jboss/container/java/run/run-java.sh" ]
-
+CMD [ "/bin/sh", "-c" , ". /deployments/heroku.sh && /opt/jboss/container/java/run/run-java.sh" ]

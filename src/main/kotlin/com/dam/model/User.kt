@@ -8,5 +8,5 @@ class User {
     @Id
     @GeneratedValue(generator = "user_id_seq", strategy = GenerationType.SEQUENCE)
     var id: Long? = null
-    lateinit var name: String
+    var name: String? = null
 }

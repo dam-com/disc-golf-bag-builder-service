@@ -8,8 +8,8 @@ class Plastic {
     @Id
     @GeneratedValue(generator = "plastic_id_seq", strategy = GenerationType.SEQUENCE)
     var id: Long? = null
-    @Column(name = "maunfacturer_id")
+    @Column(name = "manufacturer_id")
     var maunfacturerId: Long? = null
-    lateinit var name: String
-    lateinit var type: String
+    var name: String? = null
+    var type: String? = null
 }

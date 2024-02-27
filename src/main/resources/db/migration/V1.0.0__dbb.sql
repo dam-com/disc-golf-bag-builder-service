@@ -35,7 +35,7 @@ CREATE SEQUENCE main_disc_id_seq START 1 INCREMENT 1 OWNED BY main_disc.id;
 CREATE TABLE manufacturer
 (
     id BIGINT NOT NULL,
-    name BIGINT NULL
+    name CHARACTER VARYING(255) NULL
 );
 ALTER TABLE manufacturer ADD PRIMARY KEY (id);
 CREATE SEQUENCE manufacturer_id_seq START 1 INCREMENT 1 OWNED BY manufacturer.id;

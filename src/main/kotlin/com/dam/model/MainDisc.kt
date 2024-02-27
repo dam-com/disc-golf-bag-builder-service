@@ -9,28 +9,28 @@ class MainDisc {
     @GeneratedValue(generator = "main_disc_id_seq", strategy = GenerationType.SEQUENCE)
     var id: Long? = null
     lateinit var name: String
-    lateinit var manufacturer: String
+    var manufacturer: String? = null
     var speed: Double? = null
     var glide: Double? = null
     var turn: Double? = null
     var fade: Double? = null
-    lateinit var description: String
+    var description: String? = null
     @Column(name = "max_weight")
     var maxWeight: Double? = null
-    lateinit var diameter: String
-    lateinit var height: String
+    var diameter: String? = null
+    var height: String? = null
     @Column(name = "rim_depth")
-    lateinit var rimDepth: String
+    var rimDepth: String? = null
     @Column(name = "inside_rim_diameter")
-    lateinit var insideRimDiameter: String
+    var insideRimDiameter: String? = null
     @Column(name = "rim_thickness")
-    lateinit var rimThickness: String
+    var rimThickness: String? = null
     @Column(name = "rim_depth_diameter_ratio")
-    lateinit var rimDepthDiameterRatio: String
+    var rimDepthDiameterRatio: String? = null
     @Column(name = "rim_configuration")
-    lateinit var rimConfiguration: String
-    lateinit var flexibility: String
+    var rimConfiguration: String? = null
+    var flexibility: String? = null
     @Column(name = "approved_date")
-    lateinit var approvedDate: String
+    var approvedDate: String? = null
 
 }

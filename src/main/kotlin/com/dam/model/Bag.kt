@@ -10,6 +10,6 @@ class Bag {
     var id: Long? = null
     @Column(name = "user_id")
     var userId: Long? = null
-    lateinit var name: String
-    lateinit var type: String
+    var name: String? = null
+    var type: String? = null
 }

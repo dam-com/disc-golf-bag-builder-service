@@ -11,5 +11,6 @@ class Plastic {
     @Column(name = "manufacturer_id")
     var maunfacturerId: Long? = null
     var name: String? = null
-    var type: String? = null
+    var description: String? = null
+    var classification: String? = null
 }

@@ -11,15 +11,15 @@ class Disc {
     @Column(name = "user_id")
     val userId: Long? = null
     lateinit var name: String
-    lateinit var manufacturer: String
-    lateinit var plastic: String
+    var manufacturer: String? = null
+    var plastic: String? = null
     var weight: Double? = null
     var speed: Double? = null
     var glide: Double? = null
     var turn: Double? = null
     var fade: Double? = null
-    lateinit var description: String
-    lateinit var condition: String
-    lateinit var color: String
+    var description: String? = null
+    var condition: String? = null
+    var color: String? = null
     var favorite: Boolean? = null
 }

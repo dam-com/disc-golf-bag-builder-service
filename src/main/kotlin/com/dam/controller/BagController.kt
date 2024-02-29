@@ -11,13 +11,9 @@ import jakarta.ws.rs.Path
 @Path("/bag")
 @ApplicationScoped
 class BagController {
+
     @Inject
     lateinit var bagService: BagService
-
-    @GET
-    fun getAllBags(): List<Bag> {
-        return bagService.getAllBags()
-    }
 
     @POST
     @Path("/create")

@@ -10,6 +10,7 @@ import jakarta.ws.rs.Path
 @Path("/user")
 @ApplicationScoped
 class UserController {
+
     @Inject
     lateinit var userService: UserService
 
@@ -17,4 +18,6 @@ class UserController {
     fun getAllUsers(): List<User> {
         return userService.getAllUsers()
     }
+
+    //didnt change anything yet cause user create??? would need login and such
 }

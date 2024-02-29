@@ -15,4 +15,6 @@ class MainDiscService {
     fun getAllMainDiscs(): List<MainDisc> {
         return mainDiscRepository.listAll()
     }
+
+    fun
 }

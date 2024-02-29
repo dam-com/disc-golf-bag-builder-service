@@ -9,10 +9,12 @@ import jakarta.transaction.Transactional
 @ApplicationScoped
 @Transactional
 class DiscBagService {
+
     @Inject
     lateinit var discBagRepository: DiscBagRepository
 
     fun getAllDiscBags(): List<DiscBag> {
         return discBagRepository.listAll()
     }
+
 }

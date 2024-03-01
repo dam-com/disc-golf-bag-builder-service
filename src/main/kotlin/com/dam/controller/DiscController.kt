@@ -22,9 +22,8 @@ class DiscController {
     }
 
     @GET
-    @Path("/user/{userID}/bag/{bagId}/disc/{discID}")
-    fun getUserDiscs(userId: Long, bagId: Long, discId: Long): List<Disc> {
-        return discService.getUserDiscs(userId)
-        //todo: implement functionality
+    @Path("/user/{userID}/bag/{bagId}")
+    fun getUserBagDiscs(userId: Long, bagId: Long): List<Disc> {
+        return discService.getUserBagDiscs(userId, bagId)
     }
 }

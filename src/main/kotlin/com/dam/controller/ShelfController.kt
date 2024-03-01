@@ -18,13 +18,12 @@ class ShelfController {
     @POST
     @Path("/create")
     fun createShelf(shelf: Shelf): Long? {
-        //return shelfService.addShelf(shelf)
+        return shelfService.addShelf(shelf)
     }
 
     @GET
     @Path("/user/{userId}")
     fun getUserShelves(userId: Long): List<Shelf> {
-        //return shelfService.getUserShelves(userId)
-        //todo: implement functionality
+        return shelfService.getUserShelves(userId)
     }
 }

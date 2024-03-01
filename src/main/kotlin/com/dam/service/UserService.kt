@@ -16,4 +16,5 @@ class UserService {
     fun getAllUsers(): List<User> {
         return userRepository.listAll()
     }
+
 }

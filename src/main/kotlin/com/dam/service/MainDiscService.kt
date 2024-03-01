@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional
 @ApplicationScoped
 @Transactional
 class MainDiscService {
+
     @Inject
     lateinit var mainDiscRepository: MainDiscRepository
 
@@ -16,5 +17,9 @@ class MainDiscService {
         return mainDiscRepository.listAll()
     }
 
-    fun
+    fun addMainDisc(newMainDisc: MainDisc): Long? {
+        mainDiscRepository.persist(newMainDisc)
+        return newMainDisc.id
+    }
+
 }

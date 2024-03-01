@@ -1,6 +1,5 @@
 package com.dam.service
 
-import com.dam.model.Bag
 import com.dam.model.Disc
 import com.dam.persistence.DiscRepository
 import jakarta.enterprise.context.ApplicationScoped
@@ -10,10 +9,11 @@ import jakarta.transaction.Transactional
 @ApplicationScoped
 @Transactional
 class DiscService {
+
     @Inject
     lateinit var discRepository: DiscRepository
 
-    fun getAllDiscInfo(): List<Disc>{
+    fun getAllDiscInfo(): List<Disc> {
         return discRepository.listAll()
     }
 
@@ -21,7 +21,8 @@ class DiscService {
         discRepository.persist(newDisc)
         return newDisc.id
     }
-    fun getUserDiscs(userId: Long): List<Disc> {
-        return discRepository.list("userId",userId)
+
+    fun getUserBagDiscs(userId: Long, bagId: Long): List<Disc> {
+        return discRepository.list("userId", userId, "bagId", bagId)
     }
 }

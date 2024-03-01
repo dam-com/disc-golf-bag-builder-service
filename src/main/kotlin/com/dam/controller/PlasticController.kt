@@ -3,6 +3,7 @@ package com.dam.controller
 import com.dam.model.Manufacturer
 import com.dam.model.Plastic
 import com.dam.persistence.PlasticRepository
+import com.dam.service.PlasticService
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 import jakarta.ws.rs.GET
@@ -14,18 +15,17 @@ import jakarta.ws.rs.Path
 class PlasticController {
 
     @Inject
-    lateinit var plasticRepository: PlasticRepository
+    lateinit var plasticService: PlasticService
 
     @POST
     @Path("/create")
     fun createPlastic(plastic: Plastic): Long? {
-        //return plasticService.addPlastic(plastic)
+        return plasticService.addPlastic(plastic)
     }
 
     @GET
     @Path("/user/{userId}/bag/{bagId}/disc/{discID}/plastic/{plasticId}")
     fun getDiscPlastics(userId: Long, bagId: Long, discId: Long, plasticId: Long): List<Plastic> {
-        //return plasticService.getDiscPlastic(discId)
-        //todo: implement functionality
+        return plasticService.getDiscPlastics(discId)
     }
 }

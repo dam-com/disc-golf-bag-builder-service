@@ -9,10 +9,20 @@ import jakarta.transaction.Transactional
 @ApplicationScoped
 @Transactional
 class PlasticService {
+
     @Inject
     lateinit var plasticRepository: PlasticRepository
 
     fun getAllPlastics(): List<Plastic> {
         return plasticRepository.listAll()
+    }
+
+    fun addPlastic(newPlastic: Plastic): Long? {
+        plasticRepository.persist(newPlastic)
+        return newPlastic.id
+    }
+
+    fun getDiscPlastics(discId: Long): List<Plastic> {
+        return plasticRepository.list("discId", discId)
     }
 }

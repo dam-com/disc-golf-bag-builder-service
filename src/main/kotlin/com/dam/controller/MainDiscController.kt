@@ -17,14 +17,12 @@ class MainDiscController {
 
     @POST
     @Path("/create")
-    fun createMainDisc(disc: MainDisc): Long? {
-        //return mainDiscService.addMainDisc(mainDisc)
+    fun createMainDisc(mainDisc: MainDisc): Long? {
+        return mainDiscService.addMainDisc(mainDisc)
     }
 
     @GET
-    @Path("/user/{userID}/bag/{bagId}/maindisc/{mainDiscID}")
-    fun getAllMainDiscs(userId: Long, bagId: Long, mainDiscId: Long): List<MainDisc> {
-        //return mainDiscService.getAllMainDiscs(mainDiscId)
-        //todo: implement functionality
+    fun getAllMainDiscs(): List<MainDisc> {
+        return mainDiscService.getAllMainDiscs()
     }
 }

@@ -23,6 +23,6 @@ class BagService {
     }
 
     fun getUserBags(userId: Long): List<Bag> {
-        return bagRepository.list("userId", userId)
+        return bagRepository.getUserBags(userId)
     }
 }

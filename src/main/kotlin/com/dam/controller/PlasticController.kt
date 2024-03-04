@@ -1,5 +1,6 @@
 package com.dam.controller
 
+import com.dam.model.Bag
 import com.dam.model.Manufacturer
 import com.dam.model.Plastic
 import com.dam.persistence.PlasticRepository
@@ -27,5 +28,10 @@ class PlasticController {
     @Path("/user/{userId}/bag/{bagId}/disc/{discID}/plastic/{plasticId}")
     fun getDiscPlastics(userId: Long, bagId: Long, discId: Long, plasticId: Long): List<Plastic> {
         return plasticService.getDiscPlastics(discId)
+    }
+
+    @GET
+    fun getAllPlastics(): List<Plastic> {
+        return plasticService.getAllPlastics()
     }
 }

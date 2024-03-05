@@ -11,7 +11,7 @@ class Disc {
     var id: Long? = null
 
     @Column(name = "user_id")
-    var user_id: Long? = null
+    var userId: Long? = null
     lateinit var name: String
     var manufacturer: String? = null
     var plastic: String? = null

@@ -16,13 +16,14 @@ class Bag {
     var type: String? = null
 
     @JsonIgnore
-    @ManyToMany(targetEntity = Disc::class, fetch = FetchType.EAGER)
+    @ManyToMany(targetEntity = Disc::class)
     @JoinTable(
         name = "disc_bag",
         joinColumns = [JoinColumn(name = "bag_id")],
         inverseJoinColumns = [JoinColumn(name = "disc_id")]
     )
     var discs: List<Disc> = listOf()
+
     override fun toString(): String {
         return "Bag(id=$id, userId=$userId, name=$name, type=$type)"
     }

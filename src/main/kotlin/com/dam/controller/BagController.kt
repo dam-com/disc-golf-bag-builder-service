@@ -1,7 +1,7 @@
 package com.dam.controller
 
 import com.dam.model.Bag
-import com.dam.model.MainDisc
+import com.dam.model.Disc
 import com.dam.service.BagService
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
@@ -26,10 +26,5 @@ class BagController {
     @Path("/user/{userId}")
     fun getUserBags(userId: Long): List<Bag> {
         return bagService.getUserBags(userId)
-    }
-
-    @GET
-    fun getAllBags(): List<Bag> {
-        return bagService.getAllBags()
     }
 }

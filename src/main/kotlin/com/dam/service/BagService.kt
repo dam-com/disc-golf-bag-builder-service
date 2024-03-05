@@ -13,10 +13,6 @@ class BagService {
     @Inject
     lateinit var bagRepository: BagRepository
 
-    fun getAllBags(): List<Bag> {
-        return bagRepository.listAll()
-    }
-
     fun addBag(newBag: Bag): Long? {
         bagRepository.persist(newBag)
         return newBag.id

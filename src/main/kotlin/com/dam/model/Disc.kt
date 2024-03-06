@@ -1,5 +1,6 @@
 package com.dam.model
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 
 @Entity
@@ -8,8 +9,9 @@ class Disc {
     @Id
     @GeneratedValue(generator = "disc_id_seq", strategy = GenerationType.SEQUENCE)
     var id: Long? = null
+
     @Column(name = "user_id")
-    val userId: Long? = null
+    var userId: Long? = null
     lateinit var name: String
     var manufacturer: String? = null
     var plastic: String? = null
@@ -22,4 +24,8 @@ class Disc {
     var condition: String? = null
     var color: String? = null
     var favorite: Boolean? = null
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "discs", targetEntity = Bag::class)
+    var bags: List<Bag> = listOf()
 }

@@ -9,10 +9,17 @@ import jakarta.transaction.Transactional
 @ApplicationScoped
 @Transactional
 class MainDiscService {
+
     @Inject
     lateinit var mainDiscRepository: MainDiscRepository
 
     fun getAllMainDiscs(): List<MainDisc> {
         return mainDiscRepository.listAll()
     }
+
+    fun addMainDisc(newMainDisc: MainDisc): Long? {
+        mainDiscRepository.persist(newMainDisc)
+        return newMainDisc.id
+    }
+
 }

@@ -24,6 +24,7 @@ class Bag {
     )
     var discs: List<Disc> = listOf()
 
+
     override fun toString(): String {
         return "Bag(id=$id, userId=$userId, name=$name, type=$type)"
     }

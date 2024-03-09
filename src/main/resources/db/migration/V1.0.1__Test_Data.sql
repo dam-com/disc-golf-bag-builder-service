@@ -9,9 +9,9 @@ INSERT INTO disc VALUES (nextval('disc_id_seq'),2,'force','discraft','esp', 170.
 INSERT INTO bag VALUES (nextval('bag_id_seq'),1,'testbag','grip');
 INSERT INTO bag VALUES (nextval('bag_id_seq'),1,'testbag2','pund');
 INSERT INTO bag VALUES (nextval('bag_id_seq'),2,'testbag3','pund');
-INSERT INTO disc_bag VALUES (nextval('disc_bag_id_seq'),1,1,1,false);
-INSERT INTO disc_bag VALUES (nextval('disc_bag_id_seq'),1,2,1,false);
-INSERT INTO disc_bag VALUES (nextval('disc_bag_id_seq'),2,1,1,false);
-INSERT INTO disc_bag VALUES (nextval('disc_bag_id_seq'),3,3,2,false);
+INSERT INTO disc_bag VALUES (1,1);
+INSERT INTO disc_bag VALUES (1,2);
+INSERT INTO disc_bag VALUES (2,1);
+INSERT INTO disc_bag VALUES (3,3);
 INSERT INTO plastic VALUES (nextval('plastic_id_seq'),1,'plasticname','very plastic very nice','plastic classification');
 INSERT INTO shelf VALUES (nextval('shelf_id_seq'),1,1);

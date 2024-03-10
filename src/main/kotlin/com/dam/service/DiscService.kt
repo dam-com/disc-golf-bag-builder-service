@@ -5,6 +5,7 @@ import com.dam.persistence.DiscRepository
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 import jakarta.transaction.Transactional
+import jakarta.ws.rs.core.Response
 
 @ApplicationScoped
 @Transactional
@@ -13,9 +14,9 @@ class DiscService {
     @Inject
     lateinit var discRepository: DiscRepository
 
-    fun addDisc(newDisc: Disc): Long? {
+    fun createDisc(newDisc: Disc): Response {
         discRepository.persist(newDisc)
-        return newDisc.id
+        return Response.status(201).entity("Disc created with ID: ${newDisc.id}").build()
     }
 
     fun getUserBagDiscs(userId: Long, bagId: Long): List<Disc> {

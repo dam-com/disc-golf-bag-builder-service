@@ -8,6 +8,10 @@ import jakarta.enterprise.context.ApplicationScoped
 @ApplicationScoped
 class BagRepository : PanacheRepository<Bag> {
 
+    fun getBag(bagId: Long): Bag? {
+        return findById(bagId)
+    }
+
     fun getUserBags(userId: Long): List<Bag> {
         return list("userId", userId)
     }

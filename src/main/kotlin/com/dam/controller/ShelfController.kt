@@ -7,6 +7,7 @@ import jakarta.inject.Inject
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.POST
 import jakarta.ws.rs.Path
+import jakarta.ws.rs.core.Response
 
 @Path("/shelf")
 @ApplicationScoped
@@ -17,8 +18,8 @@ class ShelfController {
 
     @POST
     @Path("/create")
-    fun createShelf(shelf: Shelf): Long? {
-        return shelfService.addShelf(shelf)
+    fun createShelf(shelf: Shelf): Response {
+        return shelfService.createShelf(shelf)
     }
 
     @GET

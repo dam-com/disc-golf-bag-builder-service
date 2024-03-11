@@ -53,14 +53,9 @@ CREATE SEQUENCE bag_id_seq START 1 INCREMENT 1 OWNED BY bag.id;
 
 CREATE TABLE disc_bag
 (
-    id BIGINT NOT NULL,
     bag_id BIGINT NOT NULL,
-    disc_id BIGINT NOT NULL,
-    user_id BIGINT NOT NULL,
-    favorite BOOLEAN NULL
+    disc_id BIGINT NOT NULL
 );
-ALTER TABLE disc_bag ADD PRIMARY KEY (id);
-CREATE SEQUENCE disc_bag_id_seq START 1 INCREMENT 1 OWNED BY disc_bag.id;
 
 
 CREATE TABLE plastic
@@ -105,7 +100,6 @@ ALTER TABLE disc ADD PRIMARY KEY (id);
 CREATE SEQUENCE disc_id_seq START 1 INCREMENT 1 OWNED BY disc.id;
 
 
-ALTER TABLE disc_bag ADD CONSTRAINT disc_bag_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);
 ALTER TABLE plastic ADD CONSTRAINT plastic_manufacturer_id_foreign FOREIGN KEY(manufacturer_id) REFERENCES manufacturer(id);
 --ALTER TABLE main_disc ADD CONSTRAINT main_disc_manufacturer_foreign FOREIGN KEY(manufacturer) REFERENCES manufacturer(id);
 ALTER TABLE disc ADD CONSTRAINT disc_user_id_foreign FOREIGN KEY(user_id) REFERENCES "user"(id);

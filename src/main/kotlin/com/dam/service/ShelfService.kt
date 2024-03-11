@@ -5,6 +5,7 @@ import com.dam.persistence.ShelfRepository
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 import jakarta.transaction.Transactional
+import jakarta.ws.rs.core.Response
 
 @ApplicationScoped
 @Transactional
@@ -13,13 +14,13 @@ class ShelfService {
     @Inject
     lateinit var shelfRepository: ShelfRepository
 
-    fun getAllShelves(): List<Shelf> {
-        return shelfRepository.listAll()
+    fun createShelf(newShelf: Shelf): Response {
+        shelfRepository.persist(newShelf)
+        return Response.status(201).entity("Shelf created with ID: ${newShelf.id}").build()
     }
 
-    fun addShelf(newShelf: Shelf): Long? {
-        shelfRepository.persist(newShelf)
-        return newShelf.id
+    fun getAllShelves(): List<Shelf> {
+        return shelfRepository.listAll()
     }
 
     fun getUserShelves(userId: Long): List<Shelf> {

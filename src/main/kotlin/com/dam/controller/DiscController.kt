@@ -7,6 +7,7 @@ import jakarta.inject.Inject
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.POST
 import jakarta.ws.rs.Path
+import jakarta.ws.rs.core.Response
 
 @Path("/disc")
 @ApplicationScoped
@@ -17,8 +18,8 @@ class DiscController {
 
     @POST
     @Path("/create")
-    fun createDisc(disc: Disc): Long? {
-        return discService.addDisc(disc)
+    fun createDisc(disc: Disc): Response {
+        return discService.createDisc(disc)
     }
 
     @GET

@@ -68,8 +68,8 @@ class BagControllerIntegrationTest {
         .`when`()
             .post("/bag/create")
         .then()
-            .statusCode(200)
-            .body(`is`("4"))
+            .statusCode(201)
+            .body(`is`("Bag created with ID: 4"))
     }
 
     //no duplicate bags

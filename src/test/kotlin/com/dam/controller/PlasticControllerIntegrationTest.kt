@@ -37,7 +37,7 @@ class PlasticControllerIntegrationTest {
 //        .`when`()
 //            .get("/plastic/user/1/bag/1/disc/1/plastic/1")
         //to do we currently dont have anything in the sql to test this situation
-    }
+//    }
 
     @Test
     fun testCreatePlasticSuccess() {

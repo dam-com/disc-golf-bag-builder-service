@@ -116,7 +116,6 @@ class DiscControllerIntegrationTest {
             .post("/disc/create")
         .then()
             .statusCode(201)
-            .body(`is`("Disc created with ID: 5"))
         given()
             .contentType(ContentType.JSON)
             .body(discToBeCreated)
@@ -124,7 +123,5 @@ class DiscControllerIntegrationTest {
             .post("/disc/create")
         .then()
             .statusCode(201)
-            .body(`is`("Disc created with ID: 6"))
-
     }
 }

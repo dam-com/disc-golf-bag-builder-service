@@ -29,7 +29,7 @@ class MainDiscControllerIntegrationTest {
                         hasEntry("turn", null),
                         hasEntry("fade", null),
                         hasEntry("description", null),
-//                        hasEntry("maxWeight", 180.1),
+//                        hasEntry("maxWeight", "180.1"),
                         hasEntry("diameter", "21.7"),
                         hasEntry("height", "2"),
                         hasEntry("rimDepth", "1.3"),

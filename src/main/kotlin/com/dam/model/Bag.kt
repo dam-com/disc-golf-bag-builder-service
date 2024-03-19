@@ -5,7 +5,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "bag")
-class Bag {
+class Bag () {
     @Id
     @GeneratedValue(generator = "bag_id_seq", strategy = GenerationType.SEQUENCE)
     var id: Long? = null
@@ -23,6 +23,12 @@ class Bag {
         inverseJoinColumns = [JoinColumn(name = "disc_id")]
     )
     var discs: List<Disc> = listOf()
+
+    constructor(userId: Long?, name: String?, type: String?) : this() {
+        this.userId = userId
+        this.name = name
+        this.type = type
+    }
 
 
     override fun toString(): String {
